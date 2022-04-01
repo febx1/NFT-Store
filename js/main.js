@@ -432,25 +432,30 @@
 })(jQuery);
 
 
-
-
-
-function send_message() {
+function user_register() {
+    JQuery('.field_error').html('');
     var name = jQuery("#name").val();
     var email = jQuery("#email").val();
     var mobile = jQuery("#mobile").val();
-    var message = jQuery("#message").val();
-    var is_error = "";
+    var password = jQuery("#password").val();
+    var is_error = '';
     if (name == "") {
-        alert("Please enter name");
-
-    } else if (email == "") {
-        alert("Please enter the email");
-    } else if (mobile == "") {
-        alert("Please enter the mobile number");
-    } else if (message == "") {
-        alert("Please enter the message");
-    } else {
+        JQuery('#name_error').html('Please enter name');
+        is_error = 'yes';
+    }
+    if (email == "") {
+        JQuery("#email_error").html('Please enter email');
+        is_error = 'yes';
+    }
+    if (mobile == "") {
+        JQuery("#mobile_error").html('Please enter mobile');
+        is_error = 'yes';
+    }
+    if (password == "") {
+        JQuery("#password_error").html('Please enter password');
+        is_error = 'yes';
+    }
+    if (is_error == '') {
         jQuery.ajax({
             url: 'send_message.php',
             type: 'post',
@@ -460,5 +465,33 @@ function send_message() {
             }
         });
     }
-}
 
+
+    function send_message() {
+        var name = jQuery("#name").val();
+        var email = jQuery("#email").val();
+        var mobile = jQuery("#mobile").val();
+        var message = jQuery("#message").val();
+        var is_error = "";
+        if (name == "") {
+            alert("Please enter name");
+
+        } else if (email == "") {
+            alert("Please enter the email");
+        } else if (mobile == "") {
+            alert("Please enter the mobile number");
+        } else if (message == "") {
+            alert("Please enter the message");
+        } else {
+            jQuery.ajax({
+                url: 'send_message.php',
+                type: 'post',
+                data: 'name=' + name + '&email=' + email + '&mobile=' + mobile + '&message=' + message,
+                success: function (result) {
+                    alert(result);
+                }
+            });
+        }
+    }
+
+}

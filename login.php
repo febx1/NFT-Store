@@ -1,42 +1,8 @@
 <?php 
 require('top.php');
-?>   <!-- Start Contact Area --><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
- <script src="js/main.js"></script>
- <script>
-  function user_register(){  
-                JQuery('.field_error').html('');
-    var name = jQuery("#name").val();
-    var email = jQuery("#email").val();
-    var mobile = jQuery("#mobile").val();
-    var password = jQuery("#password").val();
-    var is_error = '';
-    if (name == "") {
-        JQuery('#name_error').html('Please enter name');
-        is_error='yes';
-    }
-    if (email == "") {
-        JQuery("#email_error").html('Please enter email');
-        is_error='yes';
-    }
-    if (mobile == "") {
-        JQuery("#mobile_error").html('Please enter mobile');
-        is_error='yes';
-    }
-    if (password == "") {
-        JQuery("#password_error").html('Please enter password');
-        is_error='yes';
-    }
-    if(is_error=='') {
-        jQuery.ajax({
-            url: 'send_message.php',
-            type: 'post',
-            data: 'name=' + name + '&email=' + email + '&mobile=' + mobile + '&message=' + message,
-            success: function (result) {
-                alert(result);
-            }
-        });
-    }
- </script>
+?>   <!-- Start Contact Area -->
+
+ 
 <section class="htc__contact__area ptb--100 bg__white">
     <div class="container">
         <div class="row">
@@ -48,7 +14,7 @@ require('top.php');
                         </div>
                     </div>
                     <div class="col-xs-12">
-                        <form id="contact-form" action="#" method="post">
+                        <form id="register-form" action="#" method="post">
                             <div class="single-contact-form">
                                 <div class="contact-box name">
                                     <input type="text" name="name" placeholder="Your Email*" style="width:100%">
@@ -81,13 +47,14 @@ require('top.php');
                         </div>
                     </div>
                     <div class="col-xs-12">
-                        <form id="contact-form" action="#" method="post">
+                        <form id="-form" action="#" method="post">
                             <div class="single-contact-form">
                                 <div class="contact-box name">
                                     <input type="text" name="name" id="name" placeholder="Your Name*" style="width:100%">
                                    
                                 </div>
                                 <span class="field_error" id="name_error"></span>
+                                <span></span>
                             </div>
                             <div class="single-contact-form">
                                 <div class="contact-box name">
@@ -106,15 +73,15 @@ require('top.php');
                                 <div class="contact-box name">
                                     <input type="password" name="password" id="password" placeholder="Your Password*" style="width:100%">
                                 </div>
-                                <span class="field_error" id="name_error"></span>
+                                <span class="field_error" id="password_error"></span>
                             </div>
                             
                             <div class="contact-btn">
                                 <button type="button" class="fv-btn" onclick="user_register()">Register</button>
                             </div>
                         </form>
-                        <div class="form-output">
-                            <p class="form-messege"></p>
+                        <div class="form-output register_msg">
+                            <p class="form-messege field_error"></p>
                         </div>
                     </div>
                 </div> 
@@ -124,5 +91,48 @@ require('top.php');
        
     </div>
 </section>
+<script>
+  function user_register(){  
+    jQuery('.field_error').html('');
+    var name = jQuery("#name").val();
+    var email = jQuery("#email").val();
+    var mobile = jQuery("#mobile").val();
+    var password = jQuery("#password").val();
+    var is_error = '';
+    if (name == "") {
+        jQuery('#name_error').html('Please enter name');
+        is_error='yes';
+    }
+    if (email == "") {
+        jQuery("#email_error").html('Please enter email');
+        is_error='yes';
+    }
+    if (mobile == "") {
+        jQuery("#mobile_error").html('Please enter mobile');
+        is_error='yes';
+    }
+    if (password == "") {
+        jQuery("#password_error").html('Please enter password');
+        is_error='yes';
+    }
+    if(is_error=='') {
+        jQuery.ajax({
+            url: 'register_submit.php',
+            type: 'post',
+            data: 'name=' + name + '&email=' + email + '&mobile=' + mobile + '&password=' + password,
+            success: function (result) {
+              
+                if(result=='email_present'){
+                    jQuery('#email_error').html('Email Id already registered');
+                }
+                if(result=='insert'){
+                    jQuery('.register_msg p').html('Thank you for registeration');
+                }
+            }
+        });
+    }
+}
+ </script>
+ 
 <!-- End Contact Area -->
 <?php require('footer.php')?>        

@@ -1,8 +1,6 @@
 <?php 
 require('top.php');
 ?>   <!-- Start Contact Area -->
-
- 
 <section class="htc__contact__area ptb--100 bg__white">
     <div class="container">
         <div class="row">
@@ -14,24 +12,27 @@ require('top.php');
                         </div>
                     </div>
                     <div class="col-xs-12">
-                        <form id="register-form" action="#" method="post">
+                        <form id="register-form" method="post">
                             <div class="single-contact-form">
                                 <div class="contact-box name">
-                                    <input type="text" name="name" placeholder="Your Email*" style="width:100%">
+                                    <input type="text" name="login_email" id="login_email" placeholder="Your Email*" style="width:100%">
+                               
                                 </div>
+                                <span class="field_error" id="login_email_error"></span>
                             </div>
                             <div class="single-contact-form">
                                 <div class="contact-box name">
-                                    <input type="text" name="name" placeholder="Your Password*" style="width:100%">
+                                    <input type="text" name="login_password" id="login_password" placeholder="Your Password*" style="width:100%">
                                 </div>
+                                <span class="field_error" id="login_password_error"></span>
                             </div>
                             
                             <div class="contact-btn">
-                                <button type="submit" class="fv-btn">Login</button>
+                                <button type="submit" class="fv-btn" onclick="user_login()">Login</button>
                             </div>
                         </form>
                         <div class="form-output">
-                            <p class="form-messege"></p>
+                            <p class="form-messege" id="login_msg"></p>
                         </div>
                     </div>
                 </div> 
@@ -127,6 +128,38 @@ require('top.php');
                 }
                 if(result=='insert'){
                     jQuery('.register_msg p').html('Thank you for registeration');
+                }
+            }
+        });
+    }
+}
+function user_login(){  
+    jQuery('.field_error').html('');
+    
+    var email = jQuery("#login_email").val();
+   
+    var password = jQuery("#login_password").val();
+    var is_error = '';
+    if (email == "") {
+        jQuery("#login_email_error").html('Please enter email');
+        is_error='yes';
+    }
+    if (password == "") {
+        jQuery("#login_password_error").html('Please enter password');
+        is_error='yes';
+    }
+    if(is_error=='') {
+        jQuery.ajax({
+            url: 'login_submit.php',
+            type: 'post',
+            data: 'email=' + email + '&password=' + password,
+            success: function (result) {
+              
+                if(result=='wrong'){
+                    jQuery('.login_msg p').html('Please enter valid login details');
+                }
+                if(result=='valid'){
+                    window.location.href='index.php';
                 }
             }
         });

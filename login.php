@@ -1,6 +1,6 @@
 <?php 
 require('top.php');
-?>   <!-- Start Contact Area -->
+?>  <!-- Start Contact Area -->
 <section class="htc__contact__area ptb--100 bg__white">
     <div class="container">
         <div class="row">
@@ -28,10 +28,10 @@ require('top.php');
                             </div>
                             
                             <div class="contact-btn">
-                                <button type="submit" class="fv-btn" onclick="user_login()">Login</button>
+                                <button type="button" class="fv-btn" onclick="user_login()">Login</button>
                             </div>
                         </form>
-                        <div class="form-output">
+                        <div class="form-output login_msg">
                             <p class="form-messege" id="login_msg"></p>
                         </div>
                     </div>
@@ -90,7 +90,7 @@ require('top.php');
         </div>
             
        
-    </div>
+    </div> 
 </section>
 <script>
   function user_register(){  

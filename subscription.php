@@ -5,7 +5,10 @@
     <title>Subscription</title>
   </head>
   <link rel="stylesheet" href="subscription.css">
-  <body>
+ 
+    <?php
+    require('top.php');
+    ?>
     <div class="pagetop">
       <div class="container">
         <div class="card">
@@ -22,5 +25,7 @@
         </div>
       </div>
     </div>
-  </body>
-</html>
+  
+  <?php
+    require('footer.php');
+    ?>

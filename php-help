@@ -1,0 +1,17 @@
+	header('location:categories.php');
+
+
+
+
+
+
+    if(isset($_SESSION['USER_LOGIN']))
+
+
+     $uid==$row['id'];
+$subq=mysqli_query($con,"select * from subscriptions where uid='$uid'");
+$subcheck=mysqli_num_rows($subq);
+    if($subcheck>0){
+    $_SESSION['SUBSCRIPTION']='true';
+    
+    }

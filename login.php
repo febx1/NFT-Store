@@ -1,6 +1,8 @@
 <?php 
 require('top.php');
 ?>  <!-- Start Contact Area -->
+
+
 <section class="htc__contact__area ptb--100 bg__white">
     <div class="container">
         <div class="row">
@@ -78,7 +80,7 @@ require('top.php');
                             </div>
                             
                             <div class="contact-btn">
-                                <button type="button" class="fv-btn" onclick="user_register()">Register</button>
+                                <button type="button" class="fv-btn" onclick="user_register1()">Register</button>
                             </div>
                         </form>
                         <div class="form-output register_msg">
@@ -93,7 +95,7 @@ require('top.php');
     </div> 
 </section>
 <script>
-  function user_register(){  
+  function user_register1(){  
     jQuery('.field_error').html('');
     var name = jQuery("#name").val();
     var email = jQuery("#email").val();

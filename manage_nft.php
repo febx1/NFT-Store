@@ -1,5 +1,5 @@
 <?php
-require('top.inc.php');
+require('top.php');
 
 $nid='';
 $category='';
@@ -131,5 +131,5 @@ if(isset($_POST['submit'])){
 
 
 <?php
-require('footer.inc.php');
+require('footer.php');
 ?>

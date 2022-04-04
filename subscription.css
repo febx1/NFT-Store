@@ -1,0 +1,138 @@
+ .pagetop{
+   margin-top:0;
+   height:300px;
+   background-color:#533E85;
+ }
+
+.container{
+  margin-left: 500px;
+  margin-right: 500px;
+  margin-top: 50px;
+  margin-right: 55px;
+}
+.card{
+  position:relative;
+  width: 500px;
+  height: 620px;
+  background: #fff;
+  box-shadow: 0 10px 20px rgba(0,0,0,.3);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: 20px;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+
+}
+ .card:hover{
+   transform: scale(1.125);
+   transition: all .5s;
+ }
+.card::after, .card::before{
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background:#503e9d;
+  opacity: .3;
+}
+
+.card::after{
+  top: -20%;
+  right: -20%;
+  width: 200px;
+  height: 200px;
+}
+
+.card h1{
+  color: #503e9d;
+  font-size: 36;
+  font-style: bold;
+
+}
+
+.details ul{
+  width: 200px;
+  height: 80px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+}
+
+.details ul li{
+display: flex;
+align-items: center;
+font-size: 15px;
+}
+
+.details{
+  display: block;
+  width: 30px;
+}
+
+ul span{
+  color: #125C13;
+}
+
+.promo-check{
+  color: #47d147;
+}
+
+.card p{
+  font-size: 44px;
+}
+
+.card p span{
+  font-size: 45px;
+  font-weight: 600;
+  color: #505e9d;
+}
+
+/* From cssbuttons.io */
+.subscribe {
+ --glow-color: rgb(217, 176, 255);
+ --enhanced-glow-color: rgb(231, 206, 255);
+ --btn-color:rgb(89, 2, 236);
+ border: .25em solid var(--glow-color);
+ padding: 1em 3em;
+ color: var(--glow-color);
+ font-size: 15px;
+ font-weight: bold;
+ background-color: var(--btn-color);
+ border-radius: 1em;
+ outline: none;
+ box-shadow: 0 0 1em .25em var(--glow-color),
+        inset 0 0 .75em .25em var(--glow-color);
+ text-shadow: 0 0 .5em var(--glow-color);
+ position: relative;
+ transition: all 0.3s;
+ margin-right: 40px;
+}
+
+.subscribe::after {
+ pointer-events: none;
+ content: "";
+ position: absolute;
+ top: 120%;
+ left: 0;
+ height: 100%;
+ width: 100%;
+ background-color: var(--glow-spread-color);
+ filter: blur(2em);
+ opacity: .7;
+ transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+}
+
+.subscribe:hover {
+ color: var(--btn-color);
+ background-color: var(--glow-color);
+ box-shadow: 0 0 1em .25em var(--glow-color),
+        inset 0 0 .75em .25em var(--glow-color);
+        cursor: pointer;
+}
+
+.subscribe:active {
+ box-shadow: 0 0 0.6em .25em var(--glow-color),
+        inset 0 0 .5em .25em var(--glow-color);
+}

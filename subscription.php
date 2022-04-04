@@ -21,10 +21,11 @@
             </ul>
           </div>
             <p>₹ <span>200</span></p>
-            <button type="post" name="subscribe" class="subscribe" href="https://ww.sandbox.paypal.com/cgi-bin/webscr">SUBSCRIBE</button>
+             <button type="button" name="subscribe" class="subscribe"onclick="window.location.href='https://ww.sandbox.paypal.com/cgi-bin/webscr'">SUBSCRIBE</button>
         </div>
       </div>
     </div>
+    <div class="pagebot"><div class="container"></div></div>
   
   <?php
     require('footer.php');

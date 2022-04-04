@@ -3,12 +3,13 @@ require('top.php');
 require('checks/logincheck.php');
 require('subcheck.php');
 
-$condition='';
+$condition="and nft.uid='".$_SESSION['USERID']"'";
 $condition1='';
 if($_SESSION['ADMIN_ROLE']==1){
 	$condition=" and product.added_by='".$_SESSION['ADMIN_ID']."'";
 	$condition1=" and added_by='".$_SESSION['ADMIN_ID']."'";
 }
+
 
 if(isset($_GET['type']) && $_GET['type']!=''){
 	$type=get_safe_value($con,$_GET['type']);

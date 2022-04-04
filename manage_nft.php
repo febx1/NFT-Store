@@ -1,9 +1,10 @@
 <?php
 require('top.php');
+require('subcheck.php');
 
 $nid='';
 $category='';
-$uid='';
+$uid= $_SESSION['USER_ID'];
 $name='';
 $descrip='';
 $link='';
@@ -63,7 +64,7 @@ if(isset($_POST['submit'])){
 		if(isset($_GET['id']) && $_GET['id']!=''){
 			mysqli_query($con,"update nft set name='$name', descrip='$descrip',category='$category', link='$link',slink='$slink' where nid='$id'");
 		}else{
-			mysqli_query($con,"insert into nft(category,uid,name,descrip,link,status,slink) values('$category',1,'$name','$descrip','$link',1,'$slink')");
+			mysqli_query($con,"insert into nft(category,uid,name,descrip,link,status,slink) values('$category','$uid','$name','$descrip','$link',1,'$slink')");
 		}
 		header('location:nft.php');
 		die();

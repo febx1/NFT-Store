@@ -2,7 +2,9 @@
 
 
 
-
+    <script>
+    window.location.href='login.php';
+    </script>
 
 
     if(isset($_SESSION['USER_LOGIN']))

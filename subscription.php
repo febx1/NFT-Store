@@ -21,7 +21,12 @@
             </ul>
           </div>
             <p>₹ <span>200</span></p>
-             <button type="button" name="subscribe" class="subscribe"onclick="window.location.href='https://ww.sandbox.paypal.com/cgi-bin/webscr'">SUBSCRIBE</button>
+             <button type="submit" name="subscribe" class="subscribe"onclick="window.location.href='https://www.paypal.com/sdk/js?client-id=AfO2iugXQ_Q_bLrwFsnIMNecbN9UQsfF25-xr-YP0357GLaZMRLGUoTDc95psYCq7I8wLQjHDq5boQB2&disable-funding=credit,card'">SUBSCRIBE</button>
+             <div id="paypal-payment-button">
+
+                        </div>
+    <script src="https://www.paypal.com/sdk/js?client-id=AfO2iugXQ_Q_bLrwFsnIMNecbN9UQsfF25-xr-YP0357GLaZMRLGUoTDc95psYCq7I8wLQjHDq5boQB2&disable-funding=credit,card"></script>
+    <script src="payment/index.js"></script>
         </div>
       </div>
     </div>

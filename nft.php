@@ -3,7 +3,7 @@ require('top.php');
 require('checks/logincheck.php');
 require('subcheck.php');
 
-$condition="and nft.uid='".$_SESSION['USERID']"'";
+$condition="and nft.uid='".$_SESSION['USERID']."'";
 $condition1='';
 if($_SESSION['ADMIN_ROLE']==1){
 	$condition=" and product.added_by='".$_SESSION['ADMIN_ID']."'";

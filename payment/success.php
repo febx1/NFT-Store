@@ -1,11 +1,4 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Successful</title>
-
+<?php require('../top.php'); ?>
     <!-- FONT AWESOME ICONS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
 
@@ -21,6 +14,13 @@
     </div>
 
 </main>
-
-</body>
-</html>
+<?php 
+if(isset($_SESSION['USER_ID'])){
+$uid=$_SESSION['USER_ID'];
+$sub_on=date('Y-m-d h:i:s');
+$subq=mysqli_query($con,"insert into subscription(uid,subscription,sub_on) values('$uid','1','$sub_on')");
+$subcheck=mysqli_num_rows($subq);
+    
+}
+require('../footer.php');
+?>

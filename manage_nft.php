@@ -66,7 +66,11 @@ if(isset($_POST['submit'])){
 		}else{
 			mysqli_query($con,"insert into nft(category,uid,name,descrip,link,status,slink) values('$category','$uid','$name','$descrip','$link',1,'$slink')");
 		}
-		header('location:nft.php');
+		?>
+		<script>
+		window.location.href='nft.php';
+		</script>
+<?php
 		die();
 	}
 }

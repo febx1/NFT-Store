@@ -5,7 +5,7 @@
     <title>Subscription</title>
   </head>
   <link rel="stylesheet" href="subscription.css">
- 
+
     <?php
     require('top.php');
     ?>
@@ -26,12 +26,12 @@
 
                         </div>
     <script src="https://www.paypal.com/sdk/js?client-id=AfO2iugXQ_Q_bLrwFsnIMNecbN9UQsfF25-xr-YP0357GLaZMRLGUoTDc95psYCq7I8wLQjHDq5boQB2&disable-funding=credit,card"></script>
-    <script src="payment/index.js"></script>
+    <script src="index.js"></script>
         </div>
       </div>
     </div>
     <div class="pagebot"><div class="container"></div></div>
-  
+
   <?php
     require('footer.php');
     ?>

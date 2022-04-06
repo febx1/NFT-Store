@@ -15,10 +15,10 @@ paypal.Buttons({
     onApprove: function (data, actions) {
         return actions.order.capture().then(function (details) {
             console.log(details)
-            window.location.replace("http://127.0.0.1/nft/payment/success.php")
+            window.location.replace("http://127.0.0.1/nft/success.php")
         })
     },
     onCancel: function (data) {
-        window.location.replace("http://127.0.0.1/nft/payment/Oncancel.php")
+        window.location.replace("http://127.0.0.1/nft/Oncancel.php")
     }
 }).render('#paypal-payment-button');

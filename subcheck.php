@@ -1,11 +1,11 @@
 <?php
 
-$uid=$_SESSION['USER_LOGIN'];
+$uid=$_SESSION['USER_ID'];
 $subq=mysqli_query($con,"select * from subscription where uid='$uid'");
 $subcheck=mysqli_num_rows($subq);
     if($subcheck>0){
     $_SESSION['SUBSCRIPTION']='true';
-    
+
 
 
     }else{
@@ -18,4 +18,3 @@ $subcheck=mysqli_num_rows($subq);
     }
 
 ?>
-

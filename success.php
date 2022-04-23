@@ -17,19 +17,28 @@
 <?php
 
 
-if(isset($_SESSION['USER_LOGIN'])){
+if(isset($_SESSION['USER_LOGIN']))
+{
 
-  if(isset($_SESSION['SUBSCRIPTION'])){
+  if(isset($_SESSION['SUBSCRIPTION']))
+  {
 
-  }else{
-    if(isset($_SESSION['USER_ID'])){
+  }
+  else
+  {
+    if(isset($_SESSION['USER_ID']))
+    {
     $uid=$_SESSION['USER_ID'];
     $status='1';
     $sub_on=date('Y-m-d h:i:s');
     $subq=mysqli_query($con,"insert into subscription(uid,subscription,sub_on) values('$uid','$status','$sub_on')");
     $_SESSION['SUBSCRIPTION']='true';
     }
-}else{
+
+  }
+}
+  else
+  {
   ?>
  <script>
   window.location.href='login.php';

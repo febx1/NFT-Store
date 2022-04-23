@@ -54,7 +54,7 @@ if($nft_id>0){
                                     </div>
                                 </div>
                                 <!-- End Product Big Images -->
-                                
+
                             </div>
                         </div>
                         <div class="col-md-7 col-lg-7 col-sm-12 col-xs-12 smt-40 xmt-40">
@@ -67,7 +67,7 @@ if($nft_id>0){
                                 <p class="pro__info"><?php echo $get_product['0']['descrip']?></p>
                                 <div class="ht__pro__desc">
                                     <div class="sin__desc">
-                                        <p><span>Availability:</span> In Stock</p>
+                                        <p><span>Creator:</span> In Stock</p>
                                     </div>
                                     <div class="sin__desc align--left">
                                         <p><span>Categories:</span></p>
@@ -75,11 +75,13 @@ if($nft_id>0){
                                             <li><a href="#"><?php echo $get_product['0']['category']?></a></li>
                                         </ul>
                                     </div>
-                                    
+
                                     </div>
-									
-                                </div>
-								<a class="fr__btn"  href="#">Add to cart</a>
+
+                                </div >
+<div class="cr__btn">
+								<a class="cr__btn" target="_blank"  href="<?php echo $get_product['0']['slink']?>">Go to market place</a>
+              </div>
                             </div>
                         </div>
                     </div>
@@ -110,7 +112,7 @@ if($nft_id>0){
                                 </div>
                             </div>
                             <!-- End Single Content -->
-                            
+
                         </div>
                     </div>
                 </div>
@@ -118,6 +120,6 @@ if($nft_id>0){
         </section>
         <!-- End Product Description -->
 
-       
+
 
 <?php require('footer.php') ?>

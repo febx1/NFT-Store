@@ -1,0 +1,36 @@
+	header('location:categories.php');
+
+
+
+    <script>
+    window.location.href='login.php';
+    </script>
+
+
+    if(isset($_SESSION['USER_LOGIN']))
+
+
+     $uid==$row['id'];
+$subq=mysqli_query($con,"select * from subscriptions where uid='$uid'");
+$subcheck=mysqli_num_rows($subq);
+    if($subcheck>0){
+    $_SESSION['SUBSCRIPTION']='true';
+    
+    }
+
+
+    
+davy@davy.com
+AqqAM?f9
+
+gary@nft.com
+ONA2Lg?U
+
+
+
+johdo@personal.com
+#Qovrty1234
+
+
+nft@nftspace.com
+aTU)l2?W

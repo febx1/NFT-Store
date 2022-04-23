@@ -19,7 +19,7 @@ while($row=mysqli_fetch_assoc($cat_res)){
     <!-- Place favicon.ico in the root directory -->
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    
+ 
 
     <!-- All css files are included here. -->
     <!-- Bootstrap fremwork main css -->
@@ -112,9 +112,27 @@ while($row=mysqli_fetch_assoc($cat_res)){
                                     <div class="header__search search search__open">
                                         <a href="#"><i class="icon-magnifier icons"></i></a>
                                     </div>
-                                    <div class="header__account">
-                                        <a href="login.php"><i class="icon-user icons"></i></a>
+                                    <div  >
+                                    <a class="btn btn-primary" href="nft.php">Create NFT</a> 
                                     </div>
+                                    <div  class="header__account" >
+ 
+                                    </div>
+                                    <div class="header__account">
+                                        <?php if(isset($_SESSION['USER_LOGIN'])){
+                                              echo "<a href='logout.php'>Logout</a>";
+                                        }else{
+                                                echo "<a href='login.php'>Login/Register</a>";
+                                        }
+                                        ?>
+                                       
+                                    </div>
+                                    <div class="header__account">
+                                    <a href="profile.php"><i class="icon-user icons"></i></a>
+                                    </div>
+                                    
+                                 
+                                    <span>             </span>
                                     <div class="htc__shopping__cart">
                                         <a class="cart__menu" href="#"><i class="icon-handbag icons"></i></a>
                                         <a href="#"><span class="htc__qua">0</span></a>

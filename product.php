@@ -79,8 +79,10 @@ if($nft_id>0){
                                     </div>
 
                                 </div >
-<div class="cr__btn">
+                                        <div class="cr__btn">
 								<a class="cr__btn" target="_blank"  href="<?php echo $get_product['0']['slink']?>">Go to market place</a>
+                                
+                                <a class="cr__btn" target="_blank"  href="<?php echo $get_product['0']['uid']?>">Creator</a>
               </div>
                             </div>
                         </div>

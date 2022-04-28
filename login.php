@@ -24,7 +24,7 @@ require('top.php');
                             </div>
                             <div class="single-contact-form">
                                 <div class="contact-box name">
-                                    <input type="text" name="login_password" id="login_password" placeholder="Your Password*" style="width:100%">
+                                    <input type="password" name="login_password" id="login_password" placeholder="Your Password*" style="width:100%">
                                 </div>
                                 <span class="field_error" id="login_password_error"></span>
                             </div>
@@ -96,12 +96,23 @@ require('top.php');
 </section>
 <script>
   function user_register1(){  
+      
     jQuery('.field_error').html('');
     var name = jQuery("#name").val();
     var email = jQuery("#email").val();
     var mobile = jQuery("#mobile").val();
     var password = jQuery("#password").val();
     var is_error = '';
+    function validateEmail(email) {
+        var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/; 
+        console.log("Not yet but yes");
+        return regex.test(email);
+      }
+          if( !validateEmail(email)) {
+              console.log("Not yet");
+          jQuery("#email_error").html('Please enter a valid email');
+              is_error='yes';
+          }
     if (name == "") {
         jQuery('#name_error').html('Please enter name');
         is_error='yes';
@@ -126,10 +137,10 @@ require('top.php');
             success: function (result) {
               
                 if(result=='email_present'){
-                    jQuery('#email_error').html('Email Id already registered');
+                    jQuery('#email_error').html('Email Id already registered0');
                 }
                 if(result=='insert'){
-                    jQuery('.register_msg p').html('Thank you for registeration');
+                    jQuery('.register_msg p').html('Thank you for registeration ');
                 }
             }
         });

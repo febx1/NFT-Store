@@ -437,6 +437,35 @@ function user_register1() {
     var mobile = jQuery("#mobile").val();
     var password = jQuery("#password").val();
     var is_error = '';
+    //email validation
+    function validateEmail(email) {
+        var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/; 
+        console.log("Not yet but yes");
+        return regex.test(email);
+      }
+          if( !validateEmail(email)) {
+              console.log("Not yet");
+          jQuery("#email_error").html('Please enter a valid email');
+              is_error='yes';
+          }
+
+    //mobile validation
+    var filter = /^\d*(?:\.\d{1,2})?$/;
+    if (filter.test(mobile)) {
+        if(mobile.length==10){
+    }else{
+        jQuery("#mobile_error").html('Please enter a valid 10 digit mobile number');
+        is_error = 'yes';
+    }
+    }else{
+        jQuery("#mobile_error").html('Please enter a valid mobile number');
+        is_error = 'yes';
+    }
+//password
+if(password.length<10){
+    jQuery("#password_error").html('Minimum of 8 characters required for password');
+    is_error = 'yes';
+}
     if (name == "") {
         jQuery('#name_error').html('Please enter name');
         is_error = 'yes';
@@ -461,10 +490,10 @@ function user_register1() {
             success: function (result) {
 
                 if (result == 'email_present') {
-                    jQuery('#email_error').html('Email Id already registered');
+                    jQuery('#email_error').html('Email Id already registered ');
                 }
                 if (result == 'insert') {
-                    jQuery('.register_msg p').html('Thank you for registeration');
+                    jQuery('.register_msg p').html('Thank you for registeration ');
                 }
             }
         });
@@ -478,6 +507,7 @@ function user_register() {
     var mobile = jQuery("#mobile").val();
     var password = jQuery("#password").val();
     var is_error = '';
+   
     if (name == "") {
         jQuery('#name_error').html('Please enter name');
         is_error = 'yes';

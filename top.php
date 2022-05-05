@@ -109,6 +109,18 @@ while($row=mysqli_fetch_assoc($cat_res)){
                             </div>
                             <div class="col-md-3 col-lg-2 col-sm-4 col-xs-4">
                                 <div class="header__right">
+                     
+                                <div class="body__overlay"></div>
+
+<!-- <div class="search_inner">
+<form action="#" method="get">
+<input placeholder="Search here... " type="text" name="str">
+<button type="submit"></button>
+</form>
+<div class="search_close_btn">
+<span class="search_close_btn_icon"><i class="zmdi zmdi-close"></i></span>
+ </div>
+ </div> -->
                                     <div class="header__search search search__open">
                                         <a href="#"><i class="icon-magnifier icons"></i></a>
                                     </div>

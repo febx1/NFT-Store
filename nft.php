@@ -1,6 +1,6 @@
 <?php
 require('top.php');
-require('checks/logincheck.php');
+require('logincheck.php');
 require('subcheck.php');
 
 $condition="and nft.uid='".$_SESSION['USER_ID']."'";

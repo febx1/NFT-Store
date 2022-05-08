@@ -64,7 +64,7 @@
                         <li class="total__price">$130.00</li>
                     </ul>
                     <ul class="shopping__btn">
-                        <li><a href="cart.html">View Cart</a></li>
+                        <li><a href="index.php">View Cart</a></li>
                         <li class="shp__checkout"><a href="checkout.html">Checkout</a></li>
                     </ul>
                 </div>
@@ -82,17 +82,17 @@
                             <div class="col-md-7 col-sm-7 col-xs-12 col-lg-6">
                                 <div class="slide">
                                     <div class="slider__inner">
-                                        <h2>Crypto Punk Collection 2022</h2>
+                                        <h2>Discover, collect, and sell extraordinary NFTs</h2>
                                         <h1>Crypto Ape</h1>
                                         <div class="cr__btn">
-                                            <a href="cart.html">Collect Now</a>
+                                            <a href="index.php#">Collect Now</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-sm-5 col-xs-12 col-md-5">
                                 <div class="slide__thumb">
-                                    <img src="images/slider/fornt-img/1.png" alt="slider images">
+                                    <img src="images/slider/fornt-img/1.jpg" alt="slider images">
                                 </div>
                             </div>
                         </div>
@@ -107,16 +107,16 @@
                                 <div class="slide">
                                     <div class="slider__inner">
                                         <h2>Crypto Punk Collection 2022</h2>
-                                        <h1>Crypto Ape</h1>
+                                        <h1>Top NFTs</h1>
                                         <div class="cr__btn">
-                                            <a href="cart.html">Collect Now</a>
+                                            <a href="index.php#">Explore Now</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-sm-5 col-xs-12 col-md-5">
                                 <div class="slide__thumb">
-                                    <img src="images/slider/fornt-img/2.png" alt="slider images">
+                                    <img src="images/slider/fornt-img/2.jpg" alt="slider images">
                                 </div>
                             </div>
                         </div>
